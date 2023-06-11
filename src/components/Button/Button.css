@@ -1,0 +1,28 @@
+.button {
+    width: 175px;
+    height: 42px;
+    background: #744BFC;
+    border-radius: 39px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .button::before {
+    content: "+";
+    font-size: 20px;
+    position: absolute;
+    left: 15px;
+  }
+  
+  .button span {
+    margin-left: 10px;
+  }
+  

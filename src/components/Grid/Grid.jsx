@@ -1,9 +1,5 @@
 import DataGrid, {
-  Column,
-  Summary,
-  TotalItem,
-  Pager,
-  Paging,
+  Column
 } from "devextreme-react/data-grid";
 import "devextreme/dist/css/dx.light.css";
 import "./Grid.css";
@@ -15,7 +11,12 @@ import { HiFilter } from "react-icons/hi";
 function Grid() {
   const [searchText, setSearchText] = useState("");
   const [data, setData] = useState([]);
-  const [pageSize, setPageSize] = useState(10); // varsayılan satır sayısı
+  const [rowsToShow, setRowsToShow] = useState(data.length || 10); // Örneğin başlangıçta 10 satır gösterilsin.
+
+  const handleRowChange = (event) => {
+    setRowsToShow(Number(event.target.value));
+  };
+
 
   // Verileri filtrelemek için bir işlev
   const filteredData = data.filter((item) => {
@@ -41,6 +42,7 @@ function Grid() {
   }, []);
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(data));
+    setRowsToShow(data.length);
   }, [data]);
 
   return (
@@ -65,30 +67,21 @@ function Grid() {
         <Button setData={setData} />
       </div>
       <DataGrid
-        dataSource={filteredData}
+        dataSource={filteredData.slice(0, rowsToShow)}
         showBorders={true}
         rowAlternationEnabled={true}
       >
         <Column dataField="link" caption="Sosyal Medya Linki" />
         <Column dataField="name" caption="Sosyal Medya Adı" />
         <Column dataField="description" caption="Açıklama" />
-        <label>Rows: </label>
-        <input
-          type="number"
-          min="1"
-          value={pageSize}
-          onChange={(e) => setPageSize(Number(e.target.value))}
-        />
-        <Summary>
-          <TotalItem
-            column="link"
-            summaryType="count"
-            displayFormat={"{0} rows"}
-          />
-        </Summary>
-        <Paging defaultPageSize={pageSize} />
-        <Pager allowedPageSizes={[5, 10, 20]} showPageSizeSelector={true} />
+
+
       </DataGrid>
+      <div className="rows-input-area">
+            <span className="rows-input-text">Show:</span> 
+            <input type="number" min="1" max={filteredData.length} value={rowsToShow} onChange={handleRowChange} className="rows-input"
+/>
+        </div>
     </div>
   );
 }

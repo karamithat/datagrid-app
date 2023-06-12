@@ -70,6 +70,10 @@
   color: black;
 }
 
+.dx-datagrid-rowsview .dx-row:nth-child(even) {
+  background-color: red !important;
+}
+
 .dx-column-indicators {
   color: #744bfc;
   position: relative;
@@ -80,4 +84,43 @@
   font-size: 25px;
   top: 0;
 }
+.rows-input-area{
+    margin-top: 15px;
+}
 
+.rows-input {
+  border-radius: 39px;
+  border: 1px solid #CFC0FF;
+  width: 90px;
+  height: 37px;
+  text-align: center;
+  padding: 5px;
+  outline: none;
+}
+.rows-input-text{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #744BFC;
+  margin-right: 15px;
+}
+
+.rows-input::-webkit-inner-spin-button,
+.rows-input::-webkit-outer-spin-button {
+  margin: 0;
+  color: #CFC0FF;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  .container{
+    flex-direction: column;
+  }
+
+  .input-container{
+    flex-direction: column;
+  }
+}

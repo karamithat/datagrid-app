@@ -44,6 +44,8 @@ function Grid() {
     localStorage.setItem("data", JSON.stringify(data));
     setRowsToShow(data.length);
   }, [data]);
+  
+
 
   return (
     <div className="datagrid">

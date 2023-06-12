@@ -1,115 +1,141 @@
 .button {
-    width: 175px;
-    height: 42px;
-    background: #744BFC;
-    border-radius: 39px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 21px;
-    cursor: pointer;
-    border: none;
-  }
-  
-  .button::before {
-    content: "+";
-    font-size: 20px;
-    position: absolute;
-    left: 15px;
-  }
-  
-  .button span {
-    margin-left: 10px;
-  }
-  
+  width: 175px;
+  height: 42px;
+  background: #744bfc;
+  border-radius: 39px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  cursor: pointer;
+  border: none;
+}
+
+.button::before {
+  content: "+";
+  font-size: 20px;
+  position: absolute;
+  left: 15px;
+}
+
+.button span {
+  margin-left: 10px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 488px;
+  height: 406px;
+  filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal input {
+  width: 95%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 38px;
+  border: 1px solid #d9d9d9;
+  outline: none;
+}
+
+.modal .close {
+  align-self: end;
+  font-size: 25px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.modal span {
+  align-self: flex-start;
+  margin-left: 15px;
+  font-weight: 500;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  width: 80%;
+  margin-top: 3rem;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border-radius: 34px;
+  border: none;
+  background: #744bfc;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+  background: #f5f7ff;
+  color: #744bfc;
+}
+
+@media screen and (max-width: 768px) {
   .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 488px;
-    height: 406px;
-    filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.25));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .modal input {
-    width: 95%;
+    width: 90%;
+    height: 70%;
     padding: 10px;
-    margin: 5px 0;
-    border-radius: 38px;
-    border: 1px solid #D9D9D9;
-    outline: none;
   }
 
-  .modal .close {
-    align-self: end;
-    font-size: 25px;
-    border: none;
-    background: #fff;
-    cursor: pointer;
-    margin-top: 15px;
+  .button {
+    width: 130px;
+    height: 32px;
   }
-
- .modal span{
-    align-self: flex-start;
-    margin-left: 15px;
-    font-weight: 500;
- }
-  
   .modal-buttons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    width: 80%;
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
-  
+
   .modal-buttons button {
-    padding: 10px 20px;
-    border-radius: 34px;
-    border: none;
-    background: #744BFC;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .modal-buttons button:first-child {
-    background: #F5F7FF;
-    color: #744BFC;
-  } 
-
-  @media screen and (max-width: 768px) {
-    .modal {
-      width: 90%;
-      height: 80%;
-    }
-  
-    .button {
-      width: 150px;
-      height: 36px;
-    }
+    padding: 6px 12px;
   }
 
-  @media screen and (max-width: 1024px) {
-    .modal {
-      width: 80%;
-      height: 70%;
-    }
-  
-    .button {
-      width: 150px;
-      height: 36px;
-    }
+  .modal input {
+    margin: 3px 0;
+    padding: 8px;
   }
+}
+
+@media screen and (max-width: 1024px) {
+  .modal {
+    width: 70%;
+    height: 85%;
+  }
+
+  .button {
+    width: 140px;
+    height: 34px;
+  }
+
+  .modal-buttons button {
+    padding: 8px 16px;
+  }
+
+  .modal-buttons {
+    margin-top: 1rem;
+  }
+
+  .button::before {
+    left: 5px;
+  }
+
+}

@@ -1,4 +1,4 @@
-## Proje Adı
+## DataGrid App
 
 Bu projede, bir web uygulaması oluşturduk. Uygulama, React kullanılarak geliştirildi ve ana bileşenler Header, DataGrid ve bir Modal oldu.
 

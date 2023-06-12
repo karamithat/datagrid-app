@@ -12,7 +12,7 @@ import Modal from "react-modal";
 
 const Header = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-
+  
   const handleOpenModal = () => {
     setModalOpen(true);
   };

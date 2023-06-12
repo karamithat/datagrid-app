@@ -3,14 +3,13 @@ import Modal from "react-modal";
 import "./Button.css";
 import PropTypes from 'prop-types';
 
-
+// Modal'ın render edileceği uygulama elemanını belirtelim
 Modal.setAppElement("#root");
 
 const Button = ({ setData }) => {
   const [link, setLink] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -22,11 +21,13 @@ const Button = ({ setData }) => {
   }
 
   function handleSave() {
+    // Yeni veriyi kaydetmek için setData fonksiyonunu kullanalım
     setData((prevData) => [
       ...prevData,
       { link: link, name: name, description: description },
     ]);
     closeModal();
+    // State'leri sıfırlayalım
     setLink("");
     setName("");
     setDescription("");
@@ -34,9 +35,12 @@ const Button = ({ setData }) => {
 
   return (
     <div>
+      {/* Modal'ı açmak için kullanılacak buton */}
       <button className="button" onClick={openModal}>
         <span>Yeni Hesap Ekle</span>
       </button>
+      
+      {/* Modal bileşeni */}
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className="modal">
         <button className="close" onClick={closeModal}>
           X
@@ -67,6 +71,8 @@ const Button = ({ setData }) => {
     </div>
   );
 };
+
+// `setData` prop'unun PropTypes doğrulaması
 Button.propTypes = {
   setData: PropTypes.func.isRequired,
 };

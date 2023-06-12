@@ -15,6 +15,13 @@
   justify-content: space-between;
   margin-bottom: 11px;
 }
+.dx-row.dx-data-row.dx-column-lines.dx-row-alt {
+  background: linear-gradient(
+    180deg,
+    #eff2ff -30.56%,
+    rgba(232, 236, 255, 0) 135.85%
+  );
+}
 
 .input-container {
   display: flex;
@@ -70,9 +77,6 @@
   color: black;
 }
 
-.dx-datagrid-rowsview .dx-row:nth-child(even) {
-  background-color: red !important;
-}
 
 .dx-column-indicators {
   color: #744bfc;
